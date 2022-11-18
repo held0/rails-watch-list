@@ -23,18 +23,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
-end
-
-def accum(string)
-  # TODO
-  accum = ""
-  string.split.each_with_index do |letter, index|
-    accum += letter.upcase
-    index.times { accum += letter }
-    accum += "-"
-  end
-  new_length = accum.length - 2
-  accum2 = accum[0..new_length]
 end

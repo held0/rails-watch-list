@@ -75,4 +75,5 @@ gem 'json'
 gem 'open-uri'
 gem 'pry'
 gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
 
