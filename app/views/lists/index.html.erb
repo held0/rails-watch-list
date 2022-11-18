@@ -1,0 +1,24 @@
+<%= render "components/navbar" %>
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+  </div>
+</div> %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://live.staticflickr.com/27/39818201_30cdfbb058_k.jpg);">
+  <div class="container text-center">
+    <h1>Save any kind of movies</h1>
+    <p>Classic</p>
+  </div>
+</div>
+<div class="container d-flex justify-content-between mt-5">
+  <h3>My lists</h3>
+  <%= link_to "Create a movie list", new_list_path, class: "btn btn-primary" %>
+</div>
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list| %>
+    <div class="col-md-4 card justify-content-center text-center m-3"><%= list.name %></div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<%= render "components/navbar" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://live.staticflickr.com/27/39818201_30cdfbb058_k.jpg);">
+  <div class="container text-center">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+<div class="container d-flex justify-content-end">
+  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary my-3" %>
+</div>
+<div class="container mb-5">
+  <div class="row">
+    <% @list.movies.each do |movie| %>
+      <div class="card-trip col-md-4">
+        <img src="<%= movie.poster_url %>" />
+        <div class="card-trip-infos">
+          <div>
+            <div class="d-flex align-items-baseline">
+              <h4><%= movie.title %></h4>
+              <h5 class="p-1"> • <%= movie.rating %><i class="fa-solid fa-star text-warning"></i></h5>
+            </div>
+            <p><%= movie.overview %></p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p><%= @list.bookmarks.sample.comment %></p>
+          <%= link_to "delete",
+          bookmark_path(@list),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
