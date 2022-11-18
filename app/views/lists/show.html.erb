@@ -1,5 +1,5 @@
 <%= render "components/navbar" %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://live.staticflickr.com/27/39818201_30cdfbb058_k.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("cinema_seats.jpeg") %>);">
   <div class="container text-center">
     <h1><%= @list.name %></h1>
   </div>
@@ -32,4 +32,3 @@
     <% end %>
   </div>
 </div>
-
